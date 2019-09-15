@@ -94,3 +94,52 @@ f(...[1,2,3]) == 6
 ```
 [see more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 
+### Let & const
+Block-scoped binding constructs. let is the new var. const is single-assignment. Static restrictions prevent use before assignment.
+
+```JavaScript
+function f() {
+  {
+    let x;
+    {
+      // okay, block scoped name
+      const x = "sneaky";
+      // error, const
+      x = "foo";
+    }
+    // error, already declared in block
+    let x = "inner";
+  }
+}
+```
+[let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+
+
+### For..Of
+creates a loop iterating
+```JavaScript
+for (let o of foo()) {
+  console.log(o);
+  // expected output: 1
+
+  break; // closes iterator, triggers return
+}
+```
+[see more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+
+### Module
+
+```JavaScript
+// math.js
+export function add(x, y) {
+  return x + y;
+}
+export var pi = 3.141593;
+```
+
+```JavaScript
+// test.js
+import {sum, pi} from "math";
+cont result = sum(pi, 5);
+```
+[import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import), [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
