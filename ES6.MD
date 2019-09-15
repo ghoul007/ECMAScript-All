@@ -1,4 +1,4 @@
-## The specifications of ECMAScript language 2015
+## The specifications of ECMAScript language 2015 (es6)
 
 ### Arrow Function
 Arrow is a function using this ```=>``` syntax
